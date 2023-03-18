@@ -72,7 +72,12 @@ namespace MedicallCenter.Pages
         {
             if (search.Text != "" && DataGridHistory != null)
             {
-                services = services.Where(n => n.name.ToLower().Contains(search.Text.ToLower())).ToList();
+                string s_text = search.Text.ToLower();
+                var s1 = services.Where(n => n.name.ToLower().Contains(s_text)).ToList();
+                var s2 = services.Where(n => n.data.ToString().ToLower().Contains(s_text)).ToList();
+                var s3 = services.Where(n => n.login.ToString().ToLower().Contains(s_text)).ToList();
+                var s4 = services.Where(n => n.role.ToString().ToLower().Contains(s_text)).ToList();
+                services = s1.Concat(s2.Concat(s3.Concat(s4))).ToList();
                 DisplayDataInGrid();
             }
             else

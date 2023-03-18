@@ -79,7 +79,11 @@ namespace MedicalCenter.Pages
         {
             if (search.Text != "" && search.Text !="Поиск" && DataGridWorkers != null)
             {
-                workers = workers.Where(n=>n.name.ToLower().Contains(search.Text.ToLower())).ToList();
+                string s_text = search.Text.ToLower();
+                var u1 = workers.Where(n => n.name.ToLower().Contains(s_text)).ToList();
+                var u2 = workers.Where(n => n.services.ToLower().Contains(s_text)).ToList();
+                var u3 = workers.Where(n => n.lastenter.ToLower().Contains(s_text)).ToList();
+                workers = u1.Concat(u2.Concat(u3)).ToList();
 
                 DisplayDataInGrid();
             }

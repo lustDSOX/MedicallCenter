@@ -85,7 +85,13 @@ namespace MedicalCenter.Pages
         {
             if (search.Text != "" && search.Text != "Поиск" && DataGridResult != null)
             {
-                results = results.Where(n => n.User.name.ToLower().Contains(search.Text.ToLower())).ToList();
+                string s_text = search.Text.ToLower();
+                var s = results.Where(n => n.User.name.ToLower().Contains(s_text)).ToList();
+                var s1 = results.Where(n => n.date.ToLower().Contains(s_text)).ToList();
+                var s2 = results.Where(n => n.result1.ToString().ToLower().Contains(s_text)).ToList();
+                var s3 = results.Where(n => n.Worker.name.ToString().ToLower().Contains(s_text)).ToList();
+                var s4 = results.Where(n => n.Service.service1.ToString().ToLower().Contains(s_text)).ToList();
+                results = s1.Concat(s3.Concat(s2.Concat(s.Concat(s4)))).ToList();
                 DisplayDataInGrid();
             }
             else
