@@ -326,6 +326,7 @@
             <Setter Property="Background" Value="White"/>
             <Setter Property="Foreground" Value="Black"/>
             <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Margin" Value="0 0 10 0"/>
             <Setter Property="Button.BitmapEffect">
                 <Setter.Value>
                     <DropShadowBitmapEffect Color="Black" Direction="320" Softness="0.3" ShadowDepth="5" Opacity="0.6" />

@@ -9,40 +9,31 @@
       Title="Servicee"
       Style="{StaticResource WinAll}">
 
-    <Grid>
+    <Grid HorizontalAlignment="Center">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1.4*"/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="400"/>
         </Grid.ColumnDefinitions>
-        <StackPanel Orientation="Horizontal" Grid.Column="1" Margin="20 0">
-            <StackPanel Orientation="Vertical" Width="200">
-                <Label Content="Номер услуги" 
-                           FontSize="24"/>
-                <TextBox x:Name="tbKodService" FontSize="22"/>
-
-                <Label Content="Услуга" 
-                           FontSize="24"/>
-                <TextBox x:Name="tbNameService" FontSize="22"/>
-                <TextBlock Text="Цена" 
-                           FontSize="24"/>
-                <TextBox x:Name="tbPriceService" FontSize="22"/>
-
-                <Grid>
-                    <Button x:Name="dntAddService" Content="Добавить" Click="dntAddService_Click"
-                        FontSize="20" Margin="0 10 0 0"/>
-                    <Button x:Name="btnEditService" Content="Сохранить" Click="btnEditService_Click" Visibility="Hidden"
-                        FontSize="20" Margin="0 10 0 0"/>
-                </Grid>
-                <Button x:Name="btnBack" Content="Вернуться" Click="btnBack_Click"
-                        FontSize="20" Margin="0 10 0 0"/>
-                <Button x:Name="btnPrint"  
-                        FontSize="20" Height="96" Width="96" Margin="0 10 0 0" Click="btnPrint_Click">
-                    <Image Source="/Pages/print.png"/>
-                </Button>
-            </StackPanel>
-
-            <StackPanel Orientation="Vertical">
-            </StackPanel>
-        </StackPanel>
+        <Grid.RowDefinitions>
+            <RowDefinition MaxHeight="60"/>
+            <RowDefinition MaxHeight="40"/>
+            <RowDefinition MaxHeight="60"/>
+            <RowDefinition MaxHeight="40"/>
+            <RowDefinition MaxHeight="60"/>
+            <RowDefinition MaxHeight="40"/>
+            <RowDefinition MaxHeight="80"/>
+            <RowDefinition MaxHeight="80"/>
+        </Grid.RowDefinitions>
+        <Label Content="Номер услуги" FontSize="24" VerticalAlignment="Bottom"/>
+        <TextBox x:Name="tbKodService" FontSize="22" Grid.Row="1"/>
+        <Label Content="Услуга" FontSize="24" Grid.Row="2" VerticalAlignment="Bottom"/>
+        <TextBox x:Name="tbNameService" FontSize="22" Grid.Row="3"/>
+        <TextBlock Text="Цена" FontSize="24" Grid.Row="4" VerticalAlignment="Bottom"/>
+        <TextBox x:Name="tbPriceService" FontSize="22" Grid.Row="5"/>
+        <Button x:Name="dntAddService" Content="Добавить" Click="dntAddService_Click" FontSize="20" Margin="0 10 0 0" Grid.Row="6"/>
+        <Button x:Name="btnEditService" Content="Сохранить" Click="btnEditService_Click" Visibility="Hidden" FontSize="20" Margin="0 10 0 0" Grid.Row="6"/>
+        <Button x:Name="btnBack" Content="Вернуться" Click="btnBack_Click" FontSize="20" Margin="0 10 0 0" Grid.Row="7" HorizontalAlignment="Left" Padding="30 0"/>
+        <Button x:Name="btnPrint"  FontSize="20" Margin="0 10 0 0" Click="btnPrint_Click" HorizontalAlignment="Right" Grid.Row="7">
+            <Image Source="/Pages/print.png" Stretch="Uniform"/>
+        </Button>
     </Grid>
 </Page>

@@ -9,51 +9,40 @@
       Title="Workers"
       Style="{StaticResource WinAll}">
 
-    <Grid>
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <StackPanel Grid.Column="0" Orientation="Vertical" Margin="10 0 10 0">
-                <TextBlock Text="Имя" 
-                           FontSize="24"/>
-                <TextBox x:Name="tbNameWorker"  FontSize="22" Style="{DynamicResource TextBoxStyle2}"/>
-                <TextBlock Text="Логин" 
-                           FontSize="24"/>
-                <TextBox x:Name="tbLoginWorker" FontSize="22" Style="{DynamicResource TextBoxStyle2}"/>
-                <TextBlock Text="Пароль" 
-                           FontSize="24"/>
-                <TextBox x:Name="tbPasswordWorker" FontSize="22" Style="{DynamicResource TextBoxStyle2}"/>
-            </StackPanel>
-            <StackPanel Grid.Column="1" Orientation="Vertical" Margin="10 0 10 0">
-                <TextBlock Text="ip" 
-                           FontSize="24"/>
-                <TextBox x:Name="tbIpWorker" FontSize="22" Style="{DynamicResource TextBoxStyle2}"/>
-                <TextBlock Text="Время" 
-                           FontSize="24"/>
-                <DatePicker x:Name="tbLasneterWorker" FontSize="22" />
-            </StackPanel>
-            <StackPanel Grid.Column="2" Orientation="Vertical" Margin="10 0 10 0">
-                <TextBlock Text="Услуги" 
-                           FontSize="24"/>
-                <ComboBox x:Name="ComboService" IsEditable="True" IsReadOnly="False" DisplayMemberPath="service1" Template="{DynamicResource ComboBoxTemplate2}"/>
-                <TextBlock Text="Должность" 
-                           FontSize="24"/>
-                <ComboBox x:Name="ComboDolgnost"  IsEditable="True" IsReadOnly="False" DisplayMemberPath="role" Template="{DynamicResource ComboBoxTemplate}"/>
-            </StackPanel>
-            <StackPanel Grid.Column="3" Orientation="Vertical" Margin="10 0 10 0">
-                <Grid>
-                    <Button x:Name="btnAddWorke" Content="Добавить" Click="btnAddWorker_Click"
-                        FontSize="20" Margin="0 10 0 0"/>
-                    <Button x:Name="btnEditWorker" Content="Редактировать" Visibility="Hidden" Click="btnEditWorker_Click"
-                        FontSize="20" Margin="0 10 0 0"/>
-                </Grid>
-                <Button x:Name="btnBack" Content="Вернуться" Click="btnBack_Click"
-                        FontSize="20" Margin="0 10 0 0"/>
-            </StackPanel>
-        </Grid>
+    <Grid Margin="0 30">
+        <Grid.ColumnDefinitions >
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition MinWidth="200"/>
+            <ColumnDefinition MinWidth="200"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition MaxHeight="60"/>
+            <RowDefinition MaxHeight="40px"/>
+            <RowDefinition MaxHeight="60"/>
+            <RowDefinition MaxHeight="40px"/>
+            <RowDefinition MaxHeight="60"/>
+            <RowDefinition MaxHeight="40px"/>
+            <RowDefinition MaxHeight="60"/>
+            <RowDefinition MaxHeight="40px"/>
+            <RowDefinition MaxHeight="60" MinHeight="40"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Имя" FontSize="24" Grid.Column="1" VerticalAlignment="Bottom"/>
+        <TextBox x:Name="tbNameWorker"  FontSize="22" Style="{DynamicResource TextBoxStyle2}" Grid.Row="1" Grid.Column="1"/>
+        <TextBlock Text="Логин" FontSize="24" Grid.Row="2" Grid.Column="1" VerticalAlignment="Bottom"/>
+        <TextBox x:Name="tbLoginWorker" FontSize="22" Style="{DynamicResource TextBoxStyle2}" Grid.Row="3" Grid.Column="1"/>
+        <TextBlock Text="Пароль" FontSize="24" Grid.Column="1" Grid.Row="4" VerticalAlignment="Bottom"/>
+        <TextBox x:Name="tbPasswordWorker" FontSize="22" Style="{DynamicResource TextBoxStyle2}" Grid.Row="5" Grid.Column="1"/>
+        <TextBlock Text="ip" FontSize="24" Grid.Column="1" Grid.Row="6" VerticalAlignment="Bottom"/>
+        <TextBox x:Name="tbIpWorker" FontSize="22" Style="{DynamicResource TextBoxStyle2}" Grid.Column="1" Grid.Row="7"/>
+        <TextBlock Text="Время" FontSize="24" Grid.Column="2" VerticalAlignment="Bottom"/>
+        <DatePicker x:Name="tbLasneterWorker" FontSize="22" Grid.Column="2" Grid.Row="1"/>
+        <TextBlock Text="Услуги" FontSize="24" Grid.Column="2" Grid.Row="2" VerticalAlignment="Bottom"/>
+        <ComboBox x:Name="ComboService" IsEditable="True" IsReadOnly="False" DisplayMemberPath="service1" Template="{DynamicResource ComboBoxTemplate2}" Grid.Column="2" Grid.Row="3"/>
+        <TextBlock Text="Должность" FontSize="24" Grid.Column="2" Grid.Row="4" VerticalAlignment="Bottom"/>
+        <ComboBox x:Name="ComboDolgnost"  IsEditable="True" IsReadOnly="False" DisplayMemberPath="role" Template="{DynamicResource ComboBoxTemplate}" Grid.Column="2" Grid.Row="5"/>
+        <Button x:Name="btnAddWorke" Content="Добавить" Click="btnAddWorker_Click" FontSize="20" Grid.Column="2" Grid.Row="7"/>
+        <Button x:Name="btnEditWorker" Content="Редактировать" Visibility="Hidden" Click="btnEditWorker_Click" FontSize="20" Grid.Column="2" Grid.Row="7"/>
+        <Button x:Name="btnBack" Content="Вернуться" Click="btnBack_Click" FontSize="20" Margin="0 10 0 0" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="8"/>
     </Grid>
 </Page>
